@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saumay's Portfolio</title>
+    <link rel="icon" type="image/png" href="titlelogo.jpg"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #344e4a;
+            color: white;
+            padding-top: 0.1px;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            background-color: #567c78;
+            z-index: 9999;
+
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            box-shadow: 0 5px 15px rgba(235, 215, 249, 0.4);
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 85px 0;
+            align-items: center;
+        }
+
+        .firstsection>div {
+            width: 30%;
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+        }
+
+        .blue {
+            color: #7b81eb;
+        }
+
+        .hello {
+            font-size: 1.5rem;
+            color: rgb(149, 148, 148);
+        }
+
+        #element {
+            color: #7b81eb;
+        }
+
+        main hr {
+            margin: 30px 100px;
+            border: 0;
+            background-color: white;
+            height: 1.2px;
+        }
+
+        .about {
+            margin: 50px 400px;
+            width: 50%;
+            padding: 50px 0;
+            background-color: rgb(184, 183, 183);
+            border-radius: 6%;
+        }
+
+        .about img {
+            width: 400px;
+            margin: 0 10px;
+        }
+
+        .boxright {
+            width: 100%;
+            margin: 10px 90px;
+        }
+
+        .boxleft {
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .line {
+            margin: 40px 100px;
+            border: 0;
+            background-color: white;
+            height: 1.2px;
+        }
+
+        .boxright h1 {
+            font-size: 1.8rem;
+            margin: 0 100px;
+            color: black;
+        }
+
+        .boxright ul li {
+            list-style: none;
+            font-size: 1.2rem;
+            color: black;
+        }
+
+        .boxright ul {
+            align-items: left;
+            color: rgb(77, 77, 77);
+        }
+
+        .text-grey {
+            color: rgb(149, 148, 148);
+        }
+
+        .secondsection {
+            max-width: 80vw;
+            margin: auto;
+            height: 80vh;
+        }
+
+        .secondsection h1 {
+            font-size: 1.9rem;
+        }
+
+        .inner {
+            padding-top: 1px;
+            margin-top: 0;
+        }
+
+        .header {
+            text-align: center;
+            color: #fff;
+            margin-top: 0px;
+            position: relative;
+        }
+
+        .header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 4px;
+            width: 100px;
+            background-color: #2ecc71;
+            border-radius: 2px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            grid-gap: 1rem;
+            padding: 1rem 80px;
+            font-size: 1.2rem;
+        }
+
+        .skill-box {
+            padding: 1rem;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .skill-box:hover>.skill-title:after,
+        .skill-box:hover>.skill-title:before {
+            width: 35px;
+        }
+
+        .skill-box:hover .image {
+            transform: translateY(-10px);
+        }
+
+        .skill-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .skill-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 4px;
+            border-radius: 2px 0 0 2px;
+            background-color: #2ecc71;
+            transition: .5s;
+        }
+
+        .skill-title:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            width: 0;
+            height: 4px;
+            border-radius: 0 2px 2px 0;
+            background-color: #2ecc71;
+            transition: .5s;
+        }
+
+        .image {
+            width: 90px;
+            height: 90px;
+            position: relative;
+            border-radius: 45px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .5s;
+        }
+
+        .image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 90px;
+            background: rgba(100, 100, 100, 0.5);
+            border-radius: 45px 0 0 45px;
+        }
+
+        .skill-title h3 {
+            color: rgb(41, 41, 41);
+            margin-top: 0.3rem;
+        }
+
+        .skill-icon {
+            width: 50px;
+            z-index: 2;
+        }
+
+        .header p {
+            color: rgb(149, 148, 148);
+        }
+
+        footer {
+            height: 280px;
+
+            background-color: #071e22;
+        }
+
+        footer h2 {
+            padding-left: 706px;
+            padding-top: 15px;
+            color: #6f6f6f;
+        }
+
+        .firstfooter {
+            display: flex;
+            padding-left: 519px;
+            padding-top: 18px;
+        }
+
+        .secondfooter {
+            margin-left: 120px;
+            padding-top: 33px;
+        }
+
+        .secondfooter ul {
+            list-style: none;
+        }
+
+        .secondfooter ul li {
+            margin: 10px;
+        }
+
+        .secondfooter ul li a {
+            text-decoration: none;
+            color: rgb(149, 148, 148);
+        }
+
+        .secondfooter ul li a:hover {
+            box-shadow: 0 5px 15px rgba(235, 215, 249, 0.4);
+        }
+
+        footer p {
+            padding-left: 605px;
+            padding-top: 20px;
+            color: rgb(149, 148, 148);
+        }
+
+        footer p a {
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .buttons {
+            margin-top: 77px;
+        }
+
+        .buttons button {
+            background-color: #344e4a;
+            border: white;
+
+            border-style: groove;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            padding: 7px;
+        }
+
+        .buttons button a {
+            text-decoration: none;
+            color: rgb(149, 148, 148);
+        }
+        .buttons button a:hover {
+            box-shadow: 0 5px 15px rgba(235, 215, 249, 0.4);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="firstsection">
+            <div class="leftsection">
+                <div class="hello">Hello,</div>
+                My name is <span class="blue">Saumay Gupta</span>
+                <div>and I am a passionate</div>
+                <div><span id="element"></span></div>
+                <div class="buttons">
+                    <button type="button"><a href="/">Download Resume</a></button>
+                    <button type="button"><a href="https://github.com/Saumay-Gupta" target="_blank">GitHub
+                            Account</a></button>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="logo1.png" alt="Developer image" width="400px">
+            </div>
+        </section>
+        <hr id="skills">
+    </main>
+
+    <div class="inner reveal">
+        <div class="header">
+            <p>What I have done so far</p>
+            <h1>Skills</h1>
+        </div>
+        <div class="container">
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="image">
+                        <img src="htmllogo.png" alt="html logo" class="skill-icon">
+                    </div>
+                    <h3>HTML 5</h3>
+                </div>
+                <p>HTML is a markup language used by the browser to manipulate text, images, and other content, in order
+                    to display it in the required format.</p>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="image">
+                        <img src="csslogo.png" alt="css logo" class="skill-icon">
+                    </div>
+                    <h3>CSS 3</h3>
+                </div>
+                <p>CSS stands for Cascading Style Sheets. It is the language for describing the presentation of Web
+                    pages, including colours, layout, and fonts.</p>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="image">
+                        <img src="jslogo.png" alt="js logo" class="skill-icon">
+                    </div>
+                    <h3>Java Script</h3>
+                </div>
+                <p>JavaScript is an open-source programming language designed for creating web-centric applications. It
+                    is integrated
+                    with HTML making it easier to implement in web applications.</p>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="image">
+                        <img src="clogo.png" alt="c logo" class="skill-icon">
+                    </div>
+                    <h3>C</h3>
+                </div>
+                <p>C is a general-purpose programming language. The main reason for its popularity is
+                    because it is a fundamental language in the field of computer science.</p>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="image">
+                        <img src="C++logo.png" alt="C++ logo" class="skill-icon">
+                    </div>
+                    <h3>C++</h3>
+                </div>
+                <p id="about">C++ is one of the world's most popular programming languages. C++ is an object-oriented
+                    programming
+                    language which gives a clear structure to programs.</p>
+            </div>
+            <div class="skill-box">
+                <div class="skill-title">
+                    <div class="image">
+                        <img src="pythonlogo.png" alt="python logo" class="skill-icon">
+                    </div>
+                    <h3>Python</h3>
+                </div>
+                <p>Python is a widely used general-purpose, high level programming language. Its syntax allows
+                    programmers to express their concepts in fewer
+                    lines of code.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="about">
+        <div class="boxleft">
+            <img src="logo2.png" alt="About Image">
+            <div class="boxright">
+                <h1>About</h1>
+                <br>
+                <ul>
+                    <li><b>Full Name</b></li>
+                    Saumay Gupta
+                    <li><br></li>
+                    <li><b>Course</b></li>
+                    Bachelor of Technology in Computer Science with specialization in AI and ML
+                    <li><br></li>
+                    <li><b>Studing In</b></li>
+                    G.L Bajaj Institute of Technology And Management
+                    <li><br></li>
+                    <li>Graduate At</li>
+                    Year 2026
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact">
+        <h2>Contact</h2>
+        <div class="firstfooter">
+            <img src="footerlogo.png" alt="footer logo" width="180px">
+            <div class="secondfooter">
+                <ul>
+                    <li><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#sent?compose=GTvVlcRzBlHrxnBLTXCHXzCtlHRWRXRFvDFdZttxtwDXRJlpGVzwPVGSHLhJZDNVjdXxkDWdlGdGh"
+                            target="_blank"><img src="gmaillogo.ico" alt="gmail logo" width="15px"> &nbsp; G-Mail</a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/saumay-gupta-23a686259/" target="_blank"><img
+                                src="linkedin.png" alt="linkedin logo" width="15px"> &nbsp; LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="instagramlogo.png"
+                                alt="gmail logo" width="15px"> &nbsp; Instagram</a></li>
+                    <li><a href="https://www.facebook.com" target="_blank"><img src="facebooklogo.png"
+                                alt="facebook logo" width="15px"> &nbsp; Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>www.saumayportfolio.com ||<a href="https://en.wikipedia.org/wiki/Copyright_law_of_India" target="_blank"> All
+                rights
+                reserved</a></p>
+    </footer>
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- <script>var typed = new Typed('#element', {
+            strings: ['Web Developing', 'Video Editing', 'Daily Learning'],
+            typeSpeed: 50,
+        });
+    </script> -->
+    <script>
+        function runTypedThreeTimes() {
+            var element = document.querySelector('#element');
+            var strings = ['Programer', 'Web Developer', 'Daily Learner'];
+            var typeSpeed = 50;
+            var timesToRun = 10;
+    
+            function runTyped() {
+                var typed = new Typed(element, {
+                    strings: strings,
+                    typeSpeed: typeSpeed,
+                    onComplete: function () {
+                        timesToRun--;
+                        if (timesToRun > 0) {
+                            
+                            setTimeout(function () {
+                                typed.destroy(); 
+                                runTyped(); 
+                            }, 1000);
+                        }
+                    },
+                });
+            }
+    
+            runTyped(); 
+        }
+    
+        runTypedThreeTimes();
+    </script>
+    
+</body>
+
+</html>
